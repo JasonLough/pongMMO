@@ -1,0 +1,106 @@
+/* Main Primary color */
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+#gameField {
+  width: 1200px;
+  height: 900px;
+  border: 10px solid black;
+  background-color: #fff;
+  background-image: url('/images/bg.jpg');
+  background-size: cover;
+}
+.scores {
+  width: 95px;
+  height: 50px;
+  font-size: 32px;
+  position: absolute;
+  text-align: center;
+  vertical-align: top;
+  line-height: 50px;
+  border-radius: 20px;
+  border: 1px solid #333;
+}
+#score1 {
+  background-color: #f66;
+  top: calc(15px + 10px);
+  left: calc(50% - 95px /2);
+}
+#score2 {
+  background-color: #6f6;
+  top: calc(50% - 50px /2);
+  left: 0px;
+}
+#score3 {
+  background-color: #66f;
+  top: calc(50% - 50px /2);
+}
+#score4 {
+  background-color: #f6f;
+  left: calc(50% - 95px /2);
+  top: calc(15px + 10px);
+}
+.balls {
+  width: 40px;
+  height: 40px;
+  background-image: url('/images/ball1.jpg');
+  border: 1px solid #333;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px #000000;
+  position: absolute;
+  top: 300px;
+  left: 300px;
+}
+.paddles {
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #000000;
+  background-color: black;
+  position: absolute;
+}
+.verticalPaddles {
+  width: 15px;
+  height: 55px;
+}
+.horizontalPaddles {
+  width: 55px;
+  height: 15px;
+}
+.goals {
+  border: 3px dashed #222;
+  background-color: rgba(17, 102, 17, 0.4);
+  position: absolute;
+  border-radius: 20px;
+}
+.verticalGoals {
+  width: 100px;
+  height: 470px;
+}
+.horizontalGoals {
+  width: 470px;
+  height: 100px;
+}
+#goal1 {
+  top: 10px;
+  left: calc(1200px / 2 - 470px / 2);
+}
+#goal2 {
+  top: calc(900px / 2 - 470px /2);
+  left: 10px;
+}
+#goal3 {
+  top: calc(900px / 2 - 470px /2);
+  left: calc(1200px - 100px - 10px);
+}
+#goal4 {
+  left: calc(1200px / 2 - 470px /2);
+  top: calc(900px - 100px - 10px);
+}

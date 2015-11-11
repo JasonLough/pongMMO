@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="author" content="Jason Lough">
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/css/styles.min.css' />
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/lib/socket.io-1.3.7.js"></script>
+    <script type="text/javascript" src="/js/pong.min.js"></script>
+  </head>
+  <body>
+    {{{body}}}
+
+    <div style="width:150px; height:50px; float:left;padding-left:30px;">
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHRwYJKoZIhvcNAQcEoIIHODCCBzQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYB7+jaQZhxz8t6d5ZogUkmSHhcL0s2oKNRsZ1zHbqyENgcE0ZtvtYLaF+c2pHHz+6bJ6atFxU9EvFPR8SXnsd4p6hVw+dng1OFc9BgHpl1OiK8Mx2UHv5LTPt97/XBuALB/Xvgw1TcTC3WgZZTXJwGSGuKtQlEUYZNgn4gyNb1u3DELMAkGBSsOAwIaBQAwgcQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQI8TSAM+Y9VOeAgaAaZ1o4TembxhnolxpvPUbQV6c2zi6nzgCW9iOnV9OLTxgmK4pnypxfaNoiG3We7kDFiBF7yAfc6v/K+xRxUH2h4lKl+8r7gkW4NibLwdEX4dr5yOWnBPTooQNSIAOb2RIsD4OZ0XPLWf+AbyJu3R4AkrwZ+KjxsCwGC8jBPlV8r0+b7ef5FrSGvz+Wzo0UMawz7pFNjNGjrSKbMOzvyAJDoIIDhzCCA4MwggLsoAMCAQICAQAwDQYJKoZIhvcNAQEFBQAwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMB4XDTA0MDIxMzEwMTMxNVoXDTM1MDIxMzEwMTMxNVowgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBR07d/ETMS1ycjtkpkvjXZe9k+6CieLuLsPumsJ7QC1odNz3sJiCbs2wC0nLE0uLGaEtXynIgRqIddYCHx88pb5HTXv4SZeuv0Rqq4+axW9PLAAATU8w04qqjaSXgbGLP3NmohqM6bV9kZZwZLR/klDaQGo1u9uDb9lr4Yn+rBQIDAQABo4HuMIHrMB0GA1UdDgQWBBSWn3y7xm8XvVk/UtcKG+wQ1mSUazCBuwYDVR0jBIGzMIGwgBSWn3y7xm8XvVk/UtcKG+wQ1mSUa6GBlKSBkTCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb22CAQAwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQCBXzpWmoBa5e9fo6ujionW1hUhPkOBakTr3YCDjbYfvJEiv/2P+IobhOGJr85+XHhN0v4gUkEDI8r2/rNk1m0GA8HKddvTjyGw/XqXa+LSTlDYkqI8OwR8GEYj4efEtcRpRYBxV8KxAW93YDWzFGvruKnnLbDAF6VR5w/cCMn5hzGCAZowggGWAgEBMIGUMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTUxMTEwMDExMDE5WjAjBgkqhkiG9w0BCQQxFgQUVabyJXqooEookjtxZuKSTjdtR98wDQYJKoZIhvcNAQEBBQAEgYBOddBAWrwwqet15hbcnwuFEn7whoudoEpTBXUAdbC6IxZsY7dLTliadpL32Oy1KR2lW/gbD+d2fF5gFW50yilyH79ZnWnc4JiwnkDWs5//MOrzcLMlbZzkPzIUMZm8W5b8L7waS1PKOIOnY+A/bNz97aKzWalIbTfhJVokuqjhDg==-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+
+<div>
+
+<p style="line-height:50px;"> &lt;---------- Like what you see? Donate to my coffee fund!</p>
+
+<p style="line-height:50px;"> <a href="">git repo here</a> (warning : horrible, horrible things done with javascript). Developers WERE harmed during the making of this wtf hes using DOM not canvas?</p>
+
+<p style="line-height:50px;">Programming by Jason.Lough@gmail.com. BG graphic by <a href="http://invaderveex.deviantart.com/art/Forerunner-Tile-165450625">InvaderVeex</a></p>
+
+</div>
+
+  </body>
+</html>

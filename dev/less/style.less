@@ -1,0 +1,162 @@
+
+//green theme colors
+@rgba-primary-0: rgba( 45,136, 45,1);	/* Main Primary color */
+@rgba-primary-1: rgba(136,204,136,.1);  
+@rgba-primary-2: rgba( 85,170, 85,.5);
+@rgba-primary-3: rgba( 17,102, 17,.4);  //.goals
+@rgba-primary-4: rgba(  0, 68,  0,.5);
+@white : #fff;                          //#gameField
+
+@fieldBorderWidth : 10px;
+
+@team1color : #f66;
+@team2color : #6f6;
+@team3color : #66f;
+@team4color : #f6f;
+
+@scoreRegionWidth : 95px;
+@scoreRegionHeight : 50px;
+@scoreOffsetFromBorder : 15px;
+
+@goalRegionLength:470px;
+@goalRegionThickness:100px;
+
+@fieldWidth : 1200px;
+@fieldHeight : 900px;
+
+@ballSize: 40px;
+
+@dropShadow: 2px 2px 2px #000000;
+
+@defaultPaddleLength: 55px;
+@defaultPaddleThickness: 15px;
+
+@commonBorderRadius: 20px;
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#gameField {
+  width: @fieldWidth;
+  height: @fieldHeight;
+  border: @fieldBorderWidth solid black;
+  background-color:@white;
+  background-image: url('/images/bg.jpg');
+  background-size: cover;
+}
+
+.scores {
+  width:@scoreRegionWidth;
+  height:@scoreRegionHeight;
+  font-size:32px;
+  position: absolute;
+  text-align:center;
+  vertical-align: top;
+  line-height:@scoreRegionHeight;
+  border-radius: @commonBorderRadius;
+  border:1px solid #333;
+}
+
+#score1 {  
+  background-color:@team1color;
+  top:~'calc(@{scoreOffsetFromBorder} + @{fieldBorderWidth})';
+  left:~'calc(50% - @{scoreRegionWidth} /2)';
+}
+
+#score2	{	
+	background-color:@team2color;
+	top:~'calc(50% - @{scoreRegionHeight} /2)';
+	left:0px;//~'calc(@{fieldBorderWidth})';
+}
+
+#score3	{
+  background-color:@team3color;
+  top:~'calc(50% - @{scoreRegionHeight} /2)';
+  //left:~'calc(@{fieldWidth} - @{scoreRegionWidth} - @{fieldBorderWidth} - @{scoreOffsetFromBorder} )';
+  //transform: rotate(-90deg);
+}
+
+#score4	{	
+	background-color:@team4color;
+	left:~'calc(50% - @{scoreRegionWidth} /2)';
+	top:~'calc(@{scoreOffsetFromBorder} + @{fieldBorderWidth})';
+}
+
+.balls {
+	width :@ballSize;
+	height: @ballSize;
+	background-image:url('/images/ball1.jpg');
+	border:1px solid #333;
+	border-radius: 50%;
+	box-shadow: @dropShadow;
+	position:absolute;
+	top:300px;
+	left:300px;
+}
+
+.paddles {
+	border:1px solid #333;
+	border-radius: 10px;
+	box-shadow: @dropShadow;
+	background-color:black;
+	position: absolute;
+}
+
+.verticalPaddles {
+	width:@defaultPaddleThickness; 
+	height:@defaultPaddleLength;
+}
+
+.horizontalPaddles {
+	width:@defaultPaddleLength;
+	height:@defaultPaddleThickness; 
+}
+
+.goals {
+	border:3px dashed #222;
+	background-color:@rgba-primary-3;
+	position:absolute;
+	border-radius: @commonBorderRadius;
+
+}
+
+.verticalGoals {
+	width:@goalRegionThickness;
+	height:@goalRegionLength;
+}
+
+.horizontalGoals {
+	width: @goalRegionLength;
+	height: @goalRegionThickness;
+}
+
+#goal1 {
+	top:@fieldBorderWidth;
+  	left:~'calc(@{fieldWidth} / 2 - @{goalRegionLength} / 2)';
+ }
+
+#goal2 {
+	top:~'calc(@{fieldHeight} / 2 - @{goalRegionLength} /2)';
+	left:@fieldBorderWidth;
+}
+
+#goal3 {
+  top:~'calc(@{fieldHeight} / 2 - @{goalRegionLength} /2)';
+  left:~'calc(@{fieldWidth} - @{goalRegionThickness} - @{fieldBorderWidth})';	
+}
+
+#goal4 {
+	left:~'calc(@{fieldWidth} / 2 - @{goalRegionLength} /2)';
+	top:~'calc(@{fieldHeight} - @{goalRegionThickness} - @{fieldBorderWidth})';	
+}
